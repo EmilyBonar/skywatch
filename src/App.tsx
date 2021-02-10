@@ -23,8 +23,12 @@ function App() {
 export default App;
 
 function Cloud() {
-	let pos = Math.random() * 50;
-	let offset = Math.random() * 30;
+	const [pos, setPos] = useState(0);
+	const [offset, setOffset] = useState(0);
+	useEffect(() => {
+		setPos(Math.random() * 30);
+		setOffset(Math.random() * 30);
+	}, []);
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
