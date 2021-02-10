@@ -15,6 +15,8 @@ function App() {
 			<Cloud />
 			<Cloud />
 			<Cloud />
+			<Cloud />
+			<Cloud />
 			<div className="Ground"></div>
 		</div>
 	);
@@ -25,9 +27,11 @@ export default App;
 function Cloud() {
 	const [pos, setPos] = useState(0);
 	const [offset, setOffset] = useState(0);
+	const [speed, setSpeed] = useState(20);
 	useEffect(() => {
-		setPos(Math.random() * 30);
+		setPos(Math.random() * 50);
 		setOffset(Math.random() * 30);
+		setSpeed(Math.random() * 20 + 10);
 	}, []);
 	return (
 		<svg
@@ -35,8 +39,8 @@ function Cloud() {
 			viewBox="0 0 16 16"
 			className="cloud"
 			style={{
-				top: pos + "vh",
-				animation: `animateCloud 30s linear -${offset}s infinite`,
+				top: `${pos}vh`,
+				animation: `animateCloud ${speed}s linear -${offset}s infinite`,
 			}}
 		>
 			<path
