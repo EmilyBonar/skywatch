@@ -149,6 +149,6 @@
 .cloud {
 	position: relative;
 	width: 200px;
-	-webkit-animation: animateCloud 30s linear 0s infinite;
-	        animation: animateCloud 30s linear 0s infinite;
+	-webkit-filter: drop-shadow(1px 1px gray);
+	filter: drop-shadow(1px 1px gray);
 }
